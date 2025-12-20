@@ -21,11 +21,10 @@ class Solution {
         int currentTime = 0;
         int jobIdx = 0;
         //작업 Map에 넣기
-        // ArrayList<Job> jobList = new ArrayList<>();
-        // for(int i=0; i<jobs.length; i++){
-        //     jobList.add(new Job(jobs[i][0], jobs[i][1], i));
-        // }
-        Arrays.sort(jobs, (o1, o2) -> o1[0] - o2[0]);
+        ArrayList<Job> jobList = new ArrayList<>();
+        for(int i=0; i<jobs.length; i++){
+            jobList.add(new Job(jobs[i][0], jobs[i][1], i));
+        }
                     
         PriorityQueue<Job> pq = new PriorityQueue<>(
             (a, b) -> {
@@ -41,15 +40,12 @@ class Solution {
         
         while(count < jobs.length){
             //현재시간보다 요청시간이 먼저라면 큐에 추가 //answer++
-            // for(int i=0; i<jobList.size(); i++){
-            //     if(jobList.get(i).requestTime <= currentTime){
-            //         pq.offer(jobList.get(i));
-            //         jobList.remove(i);
-            //     }
-            // }
-            while (jobIdx < jobs.length && jobs[jobIdx][0] <= currentTime) {
-                pq.offer(new Job(jobs[jobIdx][0], jobs[jobIdx][1], jobIdx));
-                jobIdx++;
+            for(int i=0; i<jobList.size(); i++){
+                if(jobList.get(i).requestTime <= currentTime){
+                    pq.offer(jobList.get(i));
+                    jobList.remove(i);
+                    i--;
+                }
             }
             
             if(!pq.isEmpty()){//큐가 비어있지 않다면

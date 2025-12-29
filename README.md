@@ -4,6 +4,6 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 [level2]<br>
 소수 찾기 - 42839 -> DFS 응용<br>
 피로도 87946 -> DFS 응용
-<br>
+<br><br>
 [level3]<br>
 베스트앨범 - 42579 -> 다양한자료형, 정렬, class활용

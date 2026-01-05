@@ -14,21 +14,25 @@ class Solution {
         }
         
         for(int i=0; i<student.length; i++){
-            //잃어버린 학생이라면
-            if(student[i] == -1){
-                if(i>0 && student[i-1] == 1){
-                    student[i]++;
-                    student[i-1]--;
+            //여벌 옷이 있는 학생이라면
+            if(student[i] > 0){
+                if(i!=0){
+                    if(student[i-1]<0){
+                        student[i]--;
+                        student[i-1]++;
+                    }
                 }
-                else if(i<student.length-1 && student[i+1] == 1){
-                    student[i]++;
-                    student[i+1]--;
+                if(i!=student.length-1){
+                    if(student[i+1]<0){
+                        student[i]--;
+                        student[i+1]++;
+                    }
                 }
             }
         }
         
         for(int i=0; i<student.length; i++){
-            if(student[i] >= 0){
+            if(student[i]==0){
                 answer++;
             }
         }

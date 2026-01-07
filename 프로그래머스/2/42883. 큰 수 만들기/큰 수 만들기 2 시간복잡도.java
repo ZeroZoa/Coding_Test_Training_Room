@@ -41,10 +41,6 @@ class Solution {
 
         sb.reverse();
         
-        
-        
-        //10, 12번 반례 찾기
-        
         String answer = sb.toString();
         
         return answer;

@@ -8,3 +8,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 <br><br>
 [level3]<br>
 베스트앨범 - 42579 -> 다양한자료형, 정렬, class활용
+
+<br><br>
+오답노트 및 복습이 필요한 문제
+다리를 지나는 트럭 - 42583
+

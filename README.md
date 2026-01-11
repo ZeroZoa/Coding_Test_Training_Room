@@ -12,3 +12,5 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 [오답노트 및 복습이 필요한 문제]<br>
 다리를 지나는 트럭 - 42583
 
+DP
+

@@ -13,5 +13,5 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 다리를 지나는 트럭 - 42583
 <br>
 DP<br>
-숫자 변환하기 - 154538
+숫자 변환하기 - 154538<br>
 N으로 표현 - 42895

@@ -14,3 +14,4 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 <br>
 DP<br>
 숫자 변환하기 - 154538
+N으로 표현 - 42895

@@ -1,291 +1,50 @@
 import java.util.*;
 
 class Solution {
-    public int solution(int n, int[][] wires) {
-        int min = wires.length - 1;
-        int temp = wires.length - 1;
-        Set<Integer> set = new HashSet<>();
-        for(int i = 0; i < n - 1; i++){ //간선 개수만큼 반복
-            //set으로 중복 제거 + 전력망 분리
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.isEmpty()){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }else if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
+    static int count;
+
+    public void dfs(int now, boolean[] visited, ArrayList<Integer>[] graph){
+        visited[now] = true;
+        for(int i=0; i<graph[now].size(); i++){
+            int next = graph[now].get(i);
+            if(visited[next]) {
+                continue;
             }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = 0; j < n - 1; j++){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            for(int j = n - 2; j >= 0; j--){
-                if(i == j){
-                    continue;
-                }else{
-                    if(set.contains(wires[j][0]) || set.contains(wires[j][1])){
-                        set.add(wires[j][0]);
-                        set.add(wires[j][1]);
-                    }
-                }
-            }
-            int other = n - set.size();
-            
-            if(other > set.size()){
-                temp = other - set.size();
-            }else{
-                temp = set.size() - other;
-            }
-            
-            //최소값 업데이트
-            if(temp < min){
-                min = temp;
-            }
-            
-            //초기화
-            set.clear();
+            count++;
+            dfs(next, visited, graph);
         }
-        return min;
+    }
+
+    public int solution(int n, int[][] wires) {
+        int answer = Integer.MAX_VALUE;
+        ArrayList<Integer>[] graph;
+        
+        for(int i = 0; i < wires.length; i++){
+            graph = new ArrayList[n + 1];
+            
+            for(int k = 1; k <= n; k++){
+                graph[k] = new ArrayList<>();
+            }
+            int temp = 0;
+            for(int j = 0; j < wires.length; j++){
+                if(i == j){
+                    continue;
+                }else{
+                    int a = wires[j][0];
+                    int b = wires[j][1];
+                    graph[a].add(b);
+                    graph[b].add(a);
+                    temp = a;
+                }
+            }
+            
+            count = 1;
+            boolean visited[] = new boolean[n + 1];
+            dfs(temp, visited, graph);
+            
+            answer = Math.min(answer, Math.abs(2*count - n));
+        }
+        
+        return answer;
     }
 }

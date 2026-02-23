@@ -37,13 +37,12 @@ class Solution {
     
     //메인
     public int solution(String numbers) {
-        primeSet.clear(); // 전역 변수 초기화 (프로그래머스 등에서는 필수)
+        primeSet.clear();
         boolean[] visit = new boolean[numbers.length()];
         String[] strArr = numbers.split("");
         
         dfs(strArr, visit, "");
         
-        // Set의 크기가 곧 소수의 개수
         return primeSet.size();
     }
 }

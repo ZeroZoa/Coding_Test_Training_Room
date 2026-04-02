@@ -35,6 +35,7 @@ class Main {
                     break;
                 }
 
+                //i번쨰 빌딩을 건설하려면 num을 끝내야함
                 //각 빌딩 번호를 기준으로 선결해야할 빌딩=i 추가
                 arr.get(num).add(i);
 

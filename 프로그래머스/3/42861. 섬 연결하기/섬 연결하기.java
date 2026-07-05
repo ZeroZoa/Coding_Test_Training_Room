@@ -1,42 +1,22 @@
 import java.util.*;
 
 class Solution {
-    public int[] parent;
-    
-    public int find(int x){
-        if(parent[x] == x){
-            return x;
-        } else{
-            return parent[x] = find(parent[x]);
-        }
-    }
-    
-    public void union(int a, int b){
-        int x = find(a);
-        int y = find(b);
-        if(x != y){ // 연결되어있지 않다면
-            parent[y] = x;
-        }
-    }
-    
     public int solution(int n, int[][] costs) {
         int answer = 0;
         
-        parent = new int[n];
-        for(int i = 0; i < n; i++){
-            parent[i] = i;
+        // 노드별 연결 및 거리 init
+        Map<Integer, List<int[]>> map = new HashMap<>();
+        for(int i = 0; i < costs.length; i++){
+            int node1 = costs[i][0];
+            int node2 = costs[i][1]; 
+            int dist = costs[i][2];
+
+            map.computeIfAbsent(node1, key -> new ArrayList<>()).add(new int[] {node2, dist});
+            map.computeIfAbsent(node2, key -> new ArrayList<>()).add(new int[] {node1, dist});
         }
         
-        Arrays.sort(costs, (x, y) -> Integer.compare(x[2], y[2]));
-        for(int i = 0; i < costs.length; i++){
-            int x = costs[i][0];
-            int y = costs[i][1];
-            int dist = costs[i][2];
+        while(){
             
-            if(find(x) != find(y)){
-                union(x, y);
-                answer += dist; 
-            }
         }
         
         return answer;

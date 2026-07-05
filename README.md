@@ -13,6 +13,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 [level3]<br>
 베스트앨범 - 42579 -> 다양한자료형, 정렬, class활용<br>
 정수 삼각형 - 43105 -> DP 응용
+섬 연결하기 - 42861 -> 크루스칼 알고리즘
 <br><br><br>
 [오답노트 및 복습이 필요한 문제!]<br>
 다리를 지나는 트럭 - 42583
